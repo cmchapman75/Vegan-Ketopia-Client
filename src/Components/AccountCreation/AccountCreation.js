@@ -25,14 +25,14 @@ class AccountCreation extends Component {
 
     createSubmit = e => {
         e.preventDefault();
-        const { username, emailAddress, password } = e.target;
-
+        const { username, emailAddress, password } = this.state;
+        console.log(username, emailAddress, password);
         this.setState({ error: null });
 
         Auth.createAccount({
-            username: username.value,
-            emailAddress: emailAddress.value,
-            password: password.value
+            username: username,
+            emailAddress: emailAddress,
+            password: password
         })
         .then(user => {
             username.value = "";
