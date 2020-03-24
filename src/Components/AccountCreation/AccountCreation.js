@@ -58,7 +58,7 @@ class AccountCreation extends Component {
                         Username:
                     </label>
                     <input
-                        classname="field-input"
+                        className="field-input"
                         required
                         name="user_name"
                         // placeholder="Username"
