@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import './RecipeDetail.css';
-import ControlBar from '../ControlBar/ControlBar';
+// import ControlBar from '../ControlBar/ControlBar';
 
 
 class RecipeDetail extends Component {
@@ -17,7 +17,7 @@ class RecipeDetail extends Component {
         </div>
         <div className="RecipeDetail__content">
           <div className="RecipeDetail__heading">
-            <ControlBar/>
+            {/* <ControlBar/> */}
             <div className="RecipeDetail_title">{this.props.title}</div>
             <div className="RecipeDetail__recipeType">{this.props.recipeType}</div>
             <div className="RecipeDetail_cuisineType">Cuisine: {this.props.cuisineType}</div>

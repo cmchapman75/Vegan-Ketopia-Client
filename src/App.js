@@ -11,8 +11,8 @@ import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
 // // import RecipesRoute from './Routes/RecipesRoute/RecipesRoute';
 import RecipeAdd from './Components/RecipeAdd/RecipeAdd';
-import RecipeEdit from './Components/RecipeEdit/RecipeEdit';
-import RecipeDetail from './Components/RecipeDetail/RecipeDetail'
+// import RecipeEdit from './Components/RecipeEdit/RecipeEdit';
+// import RecipeDetail from './Components/RecipeDetail/RecipeDetail'
 import RecipeSearch from './Components/RecipeSearch/RecipeSearch';
 // // import FilterableList from './FilterableList/FilterableList';
 
@@ -61,12 +61,12 @@ class App extends Component {
               // props={}
               component={RecipeSearch}
             />
-            <Route
+            <Route 
               exact
               path={"/recipes/create"}
               component={RecipeAdd}
-            />
-            <Route
+            /> 
+            {/* <Route
               exact
               path={"/recipes/:recipeId"}
               component={RecipeDetail}
@@ -75,7 +75,7 @@ class App extends Component {
               exact
               path={"/edit-recipes/:recipeId"}
               component={RecipeEdit}
-            />
+            />  */}
           </Switch>
         </main>
       </div>
