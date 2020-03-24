@@ -25,18 +25,18 @@ class AccountCreation extends Component {
 
     createSubmit = e => {
         e.preventDefault();
-        const { user_name, email_address, password } = e.target;
+        const { username, emailAddress, password } = e.target;
 
         this.setState({ error: null });
 
         Auth.createAccount({
-            user_name: user_name.value,
-            email_address: email_address.value,
+            username: username.value,
+            emailAddress: emailAddress.value,
             password: password.value
         })
         .then(user => {
-            user_name.value = "";
-            email_address.value = "";
+            username.value = "";
+            emailAddress.value = "";
             password.value = "";
             this.handleCreationSuccess();
         })
@@ -60,7 +60,7 @@ class AccountCreation extends Component {
                     <input
                         className="field-input"
                         required
-                        name="user_name"
+                        name="username"
                         // placeholder="Username"
                     />
                     <label className="field-label">
@@ -69,7 +69,7 @@ class AccountCreation extends Component {
                     <input 
                         className="field-input"
                         required
-                        name="email_address"
+                        name="emailAddress"
                         // placeholder="Email Address"
                     />  
                     <label className="field-label">
