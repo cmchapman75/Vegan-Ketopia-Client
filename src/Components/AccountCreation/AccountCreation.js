@@ -16,6 +16,10 @@ class AccountCreation extends Component {
 
     state = { error: null };
 
+    handleChange(event) {
+        this.setState({value: event.target.value});
+    }
+
     handleCreationSuccess = () => {
         const { history } = this.props;
         history.push("/login");
@@ -61,6 +65,8 @@ class AccountCreation extends Component {
                         className="field-input"
                         required
                         name="username"
+                        value={this.state.value}
+                        onChange={this.handleChange}
                         // placeholder="Username"
                     />
                     <label className="field-label">
@@ -70,6 +76,8 @@ class AccountCreation extends Component {
                         className="field-input"
                         required
                         name="emailAddress"
+                        value={this.state.value}
+                        onChange={this.handleChange}
                         // placeholder="Email Address"
                     />  
                     <label className="field-label">
@@ -79,6 +87,8 @@ class AccountCreation extends Component {
                         className="field-input"
                         required
                         name="password"
+                        value={this.state.value}
+                        onChange={this.handleChange}
                         // placeholder="Password"
                     />  
                     <div className="button-con">

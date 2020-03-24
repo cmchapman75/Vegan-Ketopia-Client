@@ -14,8 +14,8 @@ const AuthHelper = {
         !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
       );
   },
-  deleteAccount(user_name) {
-    return fetch(`${config.API_ENDPOINT}/accounts/${user_name}`, {
+  deleteAccount(username) {
+    return fetch(`${config.API_ENDPOINT}/accounts/${username}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
