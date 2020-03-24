@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-// import Landing from './Components/Landing/Landing';
+import Landing from './Components/Landing/Landing';
 
-import AccountCreationRoute from '../src/Routes/AccountCreationRoute/AccountCreationRoute';
+import AccountCreationRoute from './Routes/AccountCreationRoute/AccountCreationRoute';
 // import AccountCreation from '../src/Components/AccountCreation/AccountCreation';
-// // import LoginRoute from './Routes/LoginRoute/LoginRoute';
+import LoginRoute from './Routes/LoginRoute/LoginRoute';
 
-// import Header from './Components/Header/Header'
-
-// import Home from './Components/Home/Home';
+import Header from './Components/Header/Header';
+import Home from './Components/Home/Home';
 // // import RecipesRoute from './Routes/RecipesRoute/RecipesRoute';
-// import RecipeAdd from './Components/RecipeAdd/RecipeAdd';
-// // import RecipeEdit from './RecipeEdit/RecipeEdit';
-// import RecipeDetail from './Components/RecipeDetail/RecipeDetail'
-// import RecipeSearch from './Components/RecipeSearch/RecipeSearch';
+import RecipeAdd from './Components/RecipeAdd/RecipeAdd';
+import RecipeEdit from './Components/RecipeEdit/RecipeEdit';
+import RecipeDetail from './Components/RecipeDetail/RecipeDetail'
+import RecipeSearch from './Components/RecipeSearch/RecipeSearch';
 // // import FilterableList from './FilterableList/FilterableList';
 
 import './App.css';
@@ -34,24 +33,49 @@ class App extends Component {
     return (
       <div className="App">
         <main>
-          {/* <Header /> */}
+          <Header />
           <Switch>
-          {/* <Route
+          <Route
               exact
               path={"/"}
               component={Landing}
-            /> */}
+            />
             <Route
               exact
               path={"/accountCreation"}
               component={AccountCreationRoute}
               />
-            
-            {/* <Route
+            <Route
+              exact
+              path={"/login"}
+              component={LoginRoute}
+            />
+            <Route
+              exact  
+              path={"/home"}
+              component={Home}
+            />    
+            <Route
+              exact
+              path={"/recipes/search"}
+              // props={}
+              component={RecipeSearch}
+            />
+            <Route
+              exact
+              path={"/recipes/create"}
+              component={RecipeAdd}
+            />
+            <Route
+              exact
+              path={"/recipes/:recipeId"}
+              component={RecipeDetail}
+            />
+            <Route
               exact
               path={"/edit-recipes/:recipeId"}
               component={RecipeEdit}
-            /> */}
+            />
           </Switch>
         </main>
       </div>
