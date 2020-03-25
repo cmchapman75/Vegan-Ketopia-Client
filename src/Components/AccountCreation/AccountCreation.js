@@ -7,17 +7,29 @@ import Auth from "../../Helpers/Auth";
 import "./AccountCreation.css";
 
 class AccountCreation extends Component {
-    static defaultProps = {
-        location: {},
-        history: {
-            push: () => { }
-        },        
-    };
+    constructor(props) {
+        super(props);
+        this.state ={
+            error: null,
+            password: '',
+            username: '',
+            emailAddress: ''
+        }
+    
+        this.handleChange = this.handleChange.bind(this);
+        this.createSubmit = this.createSubmit.bind(this);
+      }
+    // static defaultProps = {
+    //     location: {},
+    //     history: {
+    //         push: () => { }
+    //     },        
+    // };
 
-    state = { error: null };
+    
 
     handleChange(event) {
-        this.setState({value: event.target.value});
+        this.setState({[event.target.name]: event.target.value});
     }
 
     handleCreationSuccess = () => {
@@ -49,6 +61,9 @@ class AccountCreation extends Component {
         });
     };
 
+    // componentDidMount() {
+    //     this.
+    // }
     render() {
         let error = this.state.error;
         return(
@@ -65,8 +80,8 @@ class AccountCreation extends Component {
                         className="field-input"
                         required
                         name="username"
-                        value={this.state.value}
-                        onChange={this.handleChange}
+                        value={this.state.username}
+                        onChange={e => this.handleChange(e)}
                         // placeholder="Username"
                     />
                     <label className="field-label">
@@ -76,8 +91,8 @@ class AccountCreation extends Component {
                         className="field-input"
                         required
                         name="emailAddress"
-                        value={this.state.value}
-                        onChange={this.handleChange}
+                        value={this.state.emailAddress}
+                        onChange={e => this.handleChange(e)}
                         // placeholder="Email Address"
                     />  
                     <label className="field-label">
@@ -87,8 +102,8 @@ class AccountCreation extends Component {
                         className="field-input"
                         required
                         name="password"
-                        value={this.state.value}
-                        onChange={this.handleChange}
+                        value={this.state.password}
+                        onChange={e => this.handleChange(e)}
                         // placeholder="Password"
                     />  
                     <div className="button-con">
