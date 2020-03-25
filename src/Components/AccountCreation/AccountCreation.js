@@ -37,7 +37,7 @@ class AccountCreation extends Component {
         history.push("/login");
     };
 
-    state = { error: null };
+    
 
     createSubmit = e => {
         e.preventDefault();
